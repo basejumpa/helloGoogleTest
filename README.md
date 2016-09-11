@@ -55,7 +55,9 @@ Mind the ampersand at the end of the command line. This causes eclipse running i
 * Install the googletest's header files and libraries by copying into the system's folders:
 
     $ cp -r googletest/include/gtest/ /mingw64/include/gtest
-    $ cp ./googlemock/gtest/libgtest.a /mingw64/lib/
+    $ cp googlemock/gtest/libgtest*.a /mingw64/lib/
+	 $ cp -r googlemock/include/gmock/ /mingw64/include/gmock
+	 $ cp googlemock/libgmock*.a /mingw64/lib/
 	 
 
 ## Step 4: Clone this repository
@@ -83,4 +85,5 @@ Mind the ampersand at the end of the command line. This causes eclipse running i
 
 
 ## Ressources:
+* https://github.com/google/googletest
 * http://www.ibm.com/developerworks/aix/library/au-googletestingframework.html
