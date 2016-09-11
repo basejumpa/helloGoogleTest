@@ -1,6 +1,14 @@
-# Getting Started With GoogleTest on Windows with MinGW64
+# Getting Started With GoogleTest on Windows with MinGW32
 
 Note: This page has been created with the wonderfull http://tmpvar.com/markdown.html 
+
+
+Attention: We, on purpose, use the 32-bit gcc and not the 64-bit gcc in the MinGW-32 environment here. To use the 64-bit versions you need to adapt this cookbook.
+
+
+Hint: In case you get errors when trying to retrieve packages via pacman you might have proxy settings which are not suitable. To remove all proxies, for example, you do:
+
+   $ unset http_proxy https_proxy ftp_proxy
 
 
 ## Step 1: Install MSYS2
@@ -15,10 +23,10 @@ Note: This page has been created with the wonderfull http://tmpvar.com/markdown.
 * Exit the shell because after these heavy updates the shell becomes unreliable when working w/o a clean re-start:
 
     $ exit
-* Start the shell again via "C:\msys64\mingw64.exe". It is important that you choose the right shell (there two others: the MSYS and the MinGW32 shells. But use the MinGW64!)
-* Install git (with "gui-stuff), make, cmake and gcc, cmake, python-2.x (Note: We install git and make for MSYS, the others for MinGW64 here. The fact that we do not use the MinGW-make is important for building the googletest!)
+* Start the shell again via "C:\msys64\mingw32.exe". It is important that you choose the right shell (there two others: the MSYS and the MinGW64 shells. But use the MinGW32!)
+* Install git (with "gui-stuff), make, cmake and gcc, cmake, python-2.x (Note: We install git and make for MSYS, the others for MinGW32 here. The fact that we do not use the MinGW-make is important for building the googletest!)
 
-    $ pacman -S git mingw64/mingw-w64-x86_64-tk make mingw64/mingw-w64-x86_64-gcc mingw64/mingw-w64-x86_64-cmake mingw64/mingw-w64-x86_64-extra-cmake-modules mingw64/mingw-w64-x86_64-python2
+    $ pacman -S git mingw32/mingw-w64-i686-tk make mingw32/mingw-w64-i686-gcc mingw32/mingw-w64-i686-cmake mingw32/mingw-w64-i686-extra-cmake-modules mingw32/mingw-w64-i686-python2
 * Exit the shell:
     $ exit
 
@@ -30,7 +38,7 @@ General informations about MSYS2 and the package manager system "pacman": See ht
 Mind the ampersand at the end of the command line. This causes eclipse running in the background as an forked process of the shell. You now still can work in the shell and also in Eclipse.
 
 ## Step 2: Clone GoogleTest repository
-* Start the shell via "C:\msys64\mingw64_shell.bat" 
+* Start the shell via "C:\msys64\mingw32.exe" 
 * Make sure that you're in your home directory (the home-directory is located under "C:\msys64\home\you"):
 
     $ cd 
@@ -39,7 +47,7 @@ Mind the ampersand at the end of the command line. This causes eclipse running i
     $ git clone https://github.com/google/googletest.git
 
 ## Step 3: Build GoogleTest
-* Start the shell via "C:\msys64\mingw64_shell.bat" 
+* Start the shell via "C:\msys64\mingw32.exe" 
 * Make sure that you're in your home directory (the home-directory is located under "C:\msys64\home\you"):
 
     $ cd 
@@ -54,14 +62,14 @@ Mind the ampersand at the end of the command line. This causes eclipse running i
     $ make
 * Install the googletest's header files and libraries by copying into the system's folders:
 
-    $ cp -r googletest/include/gtest/ /mingw64/include/gtest
-    $ cp googlemock/gtest/libgtest*.a /mingw64/lib/
-	 $ cp -r googlemock/include/gmock/ /mingw64/include/gmock
-	 $ cp googlemock/libgmock*.a /mingw64/lib/
+    $ cp -r googletest/include/gtest/ /mingw32/include/gtest
+    $ cp googlemock/gtest/libgtest*.a /mingw32/lib/
+	 $ cp -r googlemock/include/gmock/ /mingw32/include/gmock
+	 $ cp googlemock/libgmock*.a /mingw32/lib/
 	 
 
 ## Step 4: Clone this repository
-* Start the shell via "C:\msys64\mingw64_shell.bat" 
+* Start the shell via "C:\msys64\mingw32.exe"  
 * Make sure that you're in your home directory (the home-directory is located under "C:\msys64\home\you"):
 
     $ cd 
@@ -70,7 +78,7 @@ Mind the ampersand at the end of the command line. This causes eclipse running i
     $ git clone https://github.com/basejumpa/helloGoogleTest.git
 
 ## Step 5: Use the example
-* Start the shell via "C:\msys64\mingw64_shell.bat"
+* Start the shell via "C:\msys64\mingw32.exe" 
 * Make sure that you're in your home directory (the home-directory is located under "C:\msys64\home\you"):
 
     $ cd 
