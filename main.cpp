@@ -1,7 +1,17 @@
-#include <iostream>
+#include <gtest/gtest.h>
 
-int main()
+TEST(someTestCasePassing, someTestPassing){
+	EXPECT_EQ(1, 1);
+	EXPECT_EQ(2, 2);
+}
+
+TEST(someTestCaseFailing, someTestFailing){
+	EXPECT_EQ(1, 0);
+	EXPECT_EQ(2, 0);
+}
+
+int main(int argc, char **argv)
 {
-	std::cout << "Hello world!\n";
-	return 0;
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
 }
